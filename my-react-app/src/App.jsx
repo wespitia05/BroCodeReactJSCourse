@@ -1,5 +1,6 @@
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import Food from './Food.jsx'
 
 function App() {
   return(
@@ -7,6 +8,7 @@ function App() {
     // <Header/> and <Footer/> both can work as well
     <>
       <Header></Header>
+      <Food></Food>
       <Footer></Footer>
     </>
   );
