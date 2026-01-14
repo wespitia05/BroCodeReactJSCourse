@@ -3,9 +3,9 @@ import profilePic from './assets/profilepic.jpg'
 function Card() {
     return(
         <div className="card">
-            <img src={profilePic} alt="profile picture"></img>
-            <h2>william</h2>
-            <p>computer science student and play video games</p>
+            <img className="cardImg" src={profilePic} alt="profile picture"></img>
+            <h2 className="card-title">william</h2>
+            <p className="card-text">computer science student and play video games</p>
         </div>
     );
 }
