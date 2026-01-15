@@ -2,6 +2,10 @@
 //             is of the correct datatype
 //             age: PropTypes.number
 
+// defaultProps = default values for props in case they are not
+//                passed from the parent component
+//                name: "Guest"
+
 import PropTypes from 'prop-types'
 
 function Student(props) {
@@ -17,7 +21,13 @@ function Student(props) {
 Student.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number,
-    isStrudent: PropTypes.bool,
+    isStudent: PropTypes.bool,
+}
+
+Student.defaultProps = {
+    name: "Guest",
+    age: 0,
+    isStudent: false,
 }
 
 export default Student
