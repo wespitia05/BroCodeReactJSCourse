@@ -1,3 +1,9 @@
+// propTypes = a mechanism that ensures that the passed value
+//             is of the correct datatype
+//             age: PropTypes.number
+
+import PropTypes from 'prop-types'
+
 function Student(props) {
     return(
         <div className="student">
@@ -6,6 +12,12 @@ function Student(props) {
             <p>Student: {props.isStudent ? "Yes" : "No"}</p>
         </div>
     );
+}
+
+Student.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    isStrudent: PropTypes.bool,
 }
 
 export default Student
