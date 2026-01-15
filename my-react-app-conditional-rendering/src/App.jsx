@@ -2,8 +2,12 @@
 //                         in your application based on certain conditions
 //                         (show, hide, or change components)
 
-function App() {
+import UserGreeting from "./UserGreeting";
 
+function App() {
+    return(
+        <UserGreeting isLoggedIn={true} username="william_espitia"></UserGreeting>
+    );
 }
 
 export default App
