@@ -12,9 +12,11 @@ function App() {
                         {id: 8, name: "carrots", calories: 25}, 
                         {id: 9, name: "corn", calories: 63}, 
                         {id: 10, name: "broccoli", calories: 50}];
+                        
+    // if one of these lists doesn't have any values, dont display them
     return(<>
-            <List items={fruits} category="Fruits"/>
-            <List items={vegetables} category="Vegetables"/>
+            {fruits.length > 0 ? <List items={fruits} category="Fruits"/> : null}
+            {vegetables.length > 0 ? <List items={vegetables} category="Vegetables"/> : null}
            </>
     );
 }
