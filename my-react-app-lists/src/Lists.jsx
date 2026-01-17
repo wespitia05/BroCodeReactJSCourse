@@ -49,4 +49,15 @@ function List(props) {
            </>); // <ol> for numbered
 }
 
+List.propTypes = {
+    category: PropTypes.string,
+    items: Proptypes.arrayOf(PropTypes.shape({id: PropTypes.number,
+                                              name: PropTypes.string,
+                                              calories: PropType.number}))
+}
+
+List.defaultProps = {
+    category: "Category",
+    items: [],
+}
 export default List
