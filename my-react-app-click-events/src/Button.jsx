@@ -4,6 +4,7 @@ function Button() {
 
     // const handleClick2 = (name) => console.log(`${name} stop clicking me`);
 
+    /*
     let count = 0;
 
     const handleClick = (name) => {
@@ -15,10 +16,14 @@ function Button() {
             console.log(`${name} stop clicking me!`)
         }
     }
+    */
+    
+    // changes the text for the button after clicking on it
+    const handleClick = (e) => e.target.textContent = "OUCH! 🤕";
 
     return(
         // using arrow function prevents from calling the function right away
-        <button onClick={() => handleClick("william")}>Click Me 😄</button>
+        <button onClick={(e) => handleClick(e)}>Click Me 😄</button>
     );
 }
 
