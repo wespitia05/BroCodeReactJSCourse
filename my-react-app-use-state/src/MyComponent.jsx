@@ -2,8 +2,10 @@
 import React, {useState} from 'react';
 
 function MyComponent() {
-    const [name, setName] = useState();
+    // set guest as the initial variable that will display before pressing button
+    const [name, setName] = useState("Guest");
 
+    // when this function is called, we use the setName parameter to set the name
     const updateName = () => {
         setName("Spongebob");
     }
