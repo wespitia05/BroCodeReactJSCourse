@@ -6,8 +6,12 @@
 //              and a setter function to update its value in the virtual dom
 //              [name, setName]
 
-function App() {
+import MyComponent from "./MyComponent.jsx"
 
+function App() {
+    return(
+        <MyComponent />
+    );
 }
 
 export default App
