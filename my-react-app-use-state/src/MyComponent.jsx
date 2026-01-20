@@ -6,6 +6,8 @@ function MyComponent() {
     const [name, setName] = useState("Guest");
     // set age 0 as the initial age
     const [age, setAge] = useState(0);
+    // set isEmployed to be false as the initial state
+    const [isEmployed, setIsEmployed] = useState(false);
 
     // when this function is called, we use the setName parameter to set the name
     const updateName = () => {
@@ -17,6 +19,11 @@ function MyComponent() {
         setAge(age + 1);
     }
 
+    // when this function is called, we toggle back and forth between true/false
+    const toggleEmployedStatus = () => {
+        setIsEmployed(!isEmployed);
+    }
+
     return(
         <div>
             <p>Name: {name}</p>
@@ -24,6 +31,9 @@ function MyComponent() {
 
             <p>Age: {age}</p>
             <button onClick={incrementAge}>Increment Age</button>
+
+            <p>Is Employed: {isEmployed ? "Yes" : "No"}</p>
+            <button onClick={toggleEmployedStatus}>Toggle Status</button>
         </div>
     );
 }
