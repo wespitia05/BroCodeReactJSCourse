@@ -2,8 +2,12 @@
 //            ex. <input>, <textarea>, <select>, <radio>
 //            triggers a function every time the value of the input changes
 
-function App() {
+import MyComponent from "./MyComponent";
 
+function App() {
+    return(
+        <MyComponent></MyComponent>
+    );
 }
 
 export default App
