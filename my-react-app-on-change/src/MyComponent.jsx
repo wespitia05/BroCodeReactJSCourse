@@ -7,6 +7,7 @@ function MyComponent() {
     const [quantity, setQuantity] = useState(0);
     const [comment, setComment] = useState("");
     const [payment, setPayment] = useState("");
+    const [shipping, setShipping] = useState("");
 
     // this function will handle changing the name
     // invoke set name function, access the event object, access target and get value property
@@ -21,6 +22,9 @@ function MyComponent() {
     }
     function handlePaymentChange(event) {
         setPayment(event.target.value);
+    }
+    function handleShippingChange(event) {
+        setShipping(event.target.value);
     }
 
     // onChange event handler triggers the function every time the input value changes
@@ -42,6 +46,16 @@ function MyComponent() {
                 <option value="Giftcard">Giftcard</option>
             </select>
             <p>Payment: {payment}</p>
+
+            <label>
+                <input type="radio" value="Pick Up" checked={shipping === "Pick Up"} onChange={handleShippingChange}/>
+                Pick Up
+            </label>
+            <label>
+            <input type="radio" value="Delivery" checked={shipping === "Delivery"} onChange={handleShippingChange}/>
+                Delivery
+            </label>
+            <p>Shipping: {shipping}</p>
         </div>
     );
 }
