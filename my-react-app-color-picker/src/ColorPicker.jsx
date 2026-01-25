@@ -7,7 +7,7 @@ function ColorPicker() {
 
     // this function will handle changing the color
     // invoke set color function, access the event object, access target and get value property
-    function handlecolorChange(event) {
+    function handleColorChange(event) {
         setColor(event.target.value);
     }
 
