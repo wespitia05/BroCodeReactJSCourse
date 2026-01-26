@@ -24,10 +24,13 @@ function MyComponent() {
     }
     // when this function is called, we decrement the count by 1
     const decrement = () => {
-        setCount(count - 1);
+        setCount(prevCount => prevCount - 1); // 0 - 1 = -1
+        setCount(prevCount => prevCount - 1); // 1 - 1 = 0
+        setCount(prevCount => prevCount - 1); // 2 - 1 = 1
     }
     // when this function is called, we reset the count to 0
     const reset = () => {
+        // no need for an updater function for resetting
         setCount(0);
     }
 
