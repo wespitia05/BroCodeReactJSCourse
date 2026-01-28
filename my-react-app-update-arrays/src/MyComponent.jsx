@@ -6,7 +6,14 @@ function MyComponent() {
     const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
 
     function handleAddFood() {
+        // get just the value of the element typed
+        const newFood = document.getElementById("foodInput").value;
+        // after pressing button or refreshing page, reset input
+        document.getElementById("foodInput").value = "";
 
+        // use updater function to not work with current state of array but the previous state of the array
+        // use spread operator to keep original array and add new food on top
+        setFoods(prevFoods => [...prevFoods, newFood]);
     }
     function handleRemoveFood() {
 
@@ -21,6 +28,8 @@ function MyComponent() {
             <ul>
                 {foods.map((food, index) => <li key={index}>{food}</li>)}
             </ul>
+            <input type="text" id="foodInput" placeholder="Enter Food Name"/>
+            <button onClick={handleAddFood}>Add Food</button>
         </div>
     );
 }
