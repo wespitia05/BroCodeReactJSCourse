@@ -7,7 +7,17 @@ function MyComponent() {
     const [carModel, setCarModel] = useState("");
 
     function handleAddCar() {
+        // create new constant to hold the new car information
+        const newCar = {year: carYear, make: carMake, model: carModel};
 
+        // use updater function to pass over the information from the previous cars
+        // and add the information of the new car on top of it
+        setCars(prevCars => [...prevCars, newCar]);
+
+        // reset values to initial state
+        setCarYear(new Date().getFullYear());
+        setCarMake("");
+        setCarModel("");
     }
     function handleRemoveCar(index) {
 
@@ -32,7 +42,10 @@ function MyComponent() {
         <div>
             <h2>List of Car Objects</h2>
             <ul>
-
+                {cars.map((car, index) => 
+                    <li key={index}>
+                        {car.year} {car.make} {car.model}
+                    </li>)}
             </ul>
             <input type="number" value={carYear} onChange={handleYearChange}/><br/>
             <input type="text" value={carMake} onChange={handleMakeChange} placeholder="Enter Car Make"/><br/>
