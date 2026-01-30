@@ -12,14 +12,20 @@ function MyComponent() {
     function handleRemoveCar(index) {
 
     }
+    // this function handles changing the year of the car
+    // our parameter is an event bc we take the value of the input
     function handleYearChange(event) {
-
+        setCarYear(event.target.value);
     }
+    // this function handles changing the make of the car
+    // our parameter is an event bc we take the value of the input
     function handleMakeChange(event) {
-
+        setCarMake(event.target.value);
     }
+    // this function handles changing the model of the car
+    // our parameter is an event bc we take the value of the input
     function handleModelChange(event) {
-
+        setCarModel(event.target.value);
     }
 
     return(
