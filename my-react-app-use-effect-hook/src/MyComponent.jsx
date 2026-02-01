@@ -20,11 +20,12 @@ import React, {useState, useEffect} from "react";
 
 function MyComponent() {
     const [count, setCount] = useState(0);
+    const [color, setColor] = useState("Green");
 
     // every time the code re-renders, we change the title
     useEffect(() => {
-        document.title = `Count: ${count}`;
-    });
+        document.title = `Count: ${count} ${color}`;
+    }, [count, color]); // any time count or color changes, do this code
     // if we want the title to update once, add empty array 
     /*
     useEffect(() => {
@@ -41,10 +42,20 @@ function MyComponent() {
     function addCount() {
         setCount(prevCount => prevCount + 1);
     }
+    function subtractCount() {
+        setCount(prevCount => prevCount - 1);
+    }
+    function changeColor() {
+        // if previous color is green, return red. otherwise return green
+        setColor(prevColor => prevColor === "Green" ? "Red" : "Green")
+    }
+
     return(
         <div>
-            <p>Count: {count}</p>
+            <p style={{color: color}}>Count: {count}</p>
             <button onClick={addCount}>Add</button>
+            <button onClick={subtractCount}>Subtract</button><br/>
+            <button onClick={changeColor}>Change Color</button>
         </div>
     );
 }
