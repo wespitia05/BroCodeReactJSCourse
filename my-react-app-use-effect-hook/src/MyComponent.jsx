@@ -16,11 +16,36 @@
 // #4 Fetching Data from an API
 // #5 Clean up when a component unmounts
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function MyComponent() {
+    const [count, setCount] = useState(0);
+
+    // every time the code re-renders, we change the title
+    useEffect(() => {
+        document.title = `Count: ${count}`;
+    });
+    // if we want the title to update once, add empty array 
+    /*
+    useEffect(() => {
+        document.title = `My Counter Program`;
+    }, []);
+    */
+   // insert count dependency, title will change ONLY when count changes
+    /*
+    useEffect(() => {
+        document.title = `Count: ${count}`;
+    }, [count]);
+    */
+
+    function addCount() {
+        setCount(prevCount => prevCount + 1);
+    }
     return(
-        <p>hello</p>
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={addCount}>Add</button>
+        </div>
     );
 }
 
